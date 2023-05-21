@@ -3,10 +3,21 @@ ServicesContent, Box, Image, Paragraph } from "./styled";
 import serviceImg1 from "../../assets/serv1.png"
 import serviceImg2 from "../../assets/serv2.png"
 import serviceImg3 from "../../assets/serv3.png"
+import { useEffect } from "react";
 
 export default function services() {
+    useEffect(() => {
+        const sr = ScrollReveal({
+            distance: "25px",
+            duration: 2500,
+            reset: true
+        })
+
+        sr.reveal(".services", {delay: 200, origin: "bottom"})
+    }, [])
+
     return(
-        <Services id="services">
+        <Services className="services" id="services">
             <CenterText>
                 <H2>My services</H2>
                 <H3>Better design, better experiences</H3>

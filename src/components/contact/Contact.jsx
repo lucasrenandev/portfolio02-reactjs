@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Contact, ContactText, H2, H3, Paragraph, 
 ContactList, List, Icons, Icon, ContactForm, 
 InputName, InputEmail, InputSubject, 
@@ -9,8 +10,18 @@ import { FaInstagram } from "react-icons/fa"
 import { FaDribbble } from "react-icons/fa"
 
 export default function contact() {
+    useEffect(() => {
+        const sr = ScrollReveal({
+            distance: "25px",
+            duration: 2500,
+            reset: true
+        })
+
+        sr.reveal(".contact", {delay: 200, origin: "bottom"})
+    }, [])
+
     return(
-        <Contact id="contact">
+        <Contact className="contact" id="contact">
             <ContactText>
                 <H2>Contact me</H2>
                 <H3>Let's work together</H3>

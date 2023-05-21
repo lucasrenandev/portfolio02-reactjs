@@ -2,10 +2,21 @@ import { About, AboutImage, Image,
 AboutText, H2, H3, Paragraph, AboutList,
 List, Button } from "./styled";
 import aboutImg from "../../assets/about.png"
+import { useEffect } from "react";
 
 export default function about() {
+    useEffect(() => {
+        const sr = ScrollReveal({
+            distance: "25px",
+            duration: 2500,
+            reset: true
+        })
+
+        sr.reveal(".about", {delay: 200, origin: "bottom"})
+    }, [])
+
     return(
-        <About id="about">
+        <About className="about" id="about">
             <AboutImage>
                 <Image src={aboutImg} alt="About image"/>
             </AboutImage>

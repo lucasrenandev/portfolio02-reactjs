@@ -8,10 +8,21 @@ import pfolioImg4 from "../../assets/portfolio4.jpg"
 import pfolioImg5 from "../../assets/portfolio5.jpg"
 import pfolioImg6 from "../../assets/portfolio6.jpg"
 import { BiHeart } from "react-icons/bi"
+import { useEffect } from "react";
 
 export default function portfolio() {
+    useEffect(() => {
+        const sr = ScrollReveal({
+            distance: "25px",
+            duration: 2500,
+            reset: true
+        })
+
+        sr.reveal(".portfolio", {delay: 200, origin: "bottom"})
+    }, [])
+
     return(
-        <Portfolio id="portfolio">
+        <Portfolio className="portfolio" id="portfolio">
             <CenterText>
                 <H2>My portfolio</H2>
                 <H3>Some of my distinguished works</H3>
